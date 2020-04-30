@@ -14,10 +14,9 @@ after_success:
     - docker build -t akashmaggon/complex-container-nginx ./nginx
     - docker build -t akashmaggon/complex-container-worker ./worker
     - docker build -t akashmaggon/complex-container-server ./server   
+    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+    - docker push akashmaggon/complex-container-client
+    - docker push akashmaggon/complex-container-server
+    - docker push akashmaggon/complex-container-nginx
+    - docker push akashmaggon/complex-container-worker    
 
-
--echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
--docker push akashmaggon/complex-container-client
--docker push akashmaggon/complex-container-server
--docker push akashmaggon/complex-container-nginx
--docker push akashmaggon/complex-container-worker    
