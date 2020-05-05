@@ -11,7 +11,7 @@
     {
       "name": "server",
       "image": "akashmaggon/complex-container-server",
-      "hostname": "server",
+      "hostname": "api",
       "essential": false,
       "memory": 128
     },
